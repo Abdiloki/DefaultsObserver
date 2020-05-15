@@ -24,6 +24,12 @@ class ViewController: NSViewController {
         }
     }
 
+    var pinnedKeys = [String]() {
+        didSet {
+            pinnedTableView.reloadData()
+        }
+    }
+
     @Published var searchString: String = ""
     @Published var type: FilterType = .containing
 
@@ -40,6 +46,10 @@ class ViewController: NSViewController {
                 res + [(key: t.key, value: t.value)]
             }
         }
+    }
+
+    @IBAction func clearPinnedItems(_ sender: Any) {
+        pinnedKeys.removeAll()
     }
 
     override func viewDidLoad() {
@@ -66,23 +76,43 @@ class ViewController: NSViewController {
     @IBAction func filterType(_ sender: NSPopUpButton) {
         type = FilterType(rawValue: sender.indexOfSelectedItem)!
     }
+
+    @IBAction func pinItems(_ sender: Any) {
+        pinnedKeys += tableView.selectedRowIndexes.map { filteredSource[$0].key }
+    }
 }
 
 extension ViewController: NSTableViewDataSource, NSTableViewDelegate {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        filteredSource.count
+        if tableView === pinnedTableView {
+            return pinnedKeys.count
+        }
+        return filteredSource.count
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        if tableColumn?.identifier.rawValue == "key" {
-            let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cell1"), owner: nil) as! NSTableCellView
-            cell.textField?.stringValue = filteredSource[row].key
-            return cell
+        if tableView === pinnedTableView {
+            if tableColumn?.identifier.rawValue == "key" {
+                let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cell1"), owner: nil) as! NSTableCellView
+                cell.textField?.stringValue = pinnedKeys[row]
+                return cell
+            } else {
+                let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cell1"), owner: nil) as! NSTableCellView
+                let val = filteredSource[row].value
+                cell.textField?.stringValue = "\(val)"
+                return cell
+            }
         } else {
-            let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cell1"), owner: nil) as! NSTableCellView
-            let val = filteredSource[row].value
-            cell.textField?.stringValue = "\(val)"
-            return cell
+            if tableColumn?.identifier.rawValue == "key" {
+                let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cell1"), owner: nil) as! NSTableCellView
+                cell.textField?.stringValue = filteredSource[row].key
+                return cell
+            } else {
+                let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cell1"), owner: nil) as! NSTableCellView
+                let val = filteredSource[row].value
+                cell.textField?.stringValue = "\(val)"
+                return cell
+            }
         }
     }
 
