@@ -49,7 +49,11 @@ class ViewController: NSViewController {
                 guard let self = self else { return }
                 if s.isEmpty { self.filteredSource = self.source; return }
                 self.filteredSource = self.source.filter { (k,v) in
-                    k.contains(s)
+                    switch t {
+                    case .containing: return k.lowercased().contains(s.lowercased())
+                    case .matchingWord: return k.lowercased() == s.lowercased()
+                    case .startsWith: return k.lowercased().hasPrefix(s.lowercased())
+                    }
                 }
         }.store(in: &self.storage)
 
@@ -76,30 +80,13 @@ extension ViewController: NSTableViewDataSource, NSTableViewDelegate {
             return cell
         } else {
             let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cell1"), owner: nil) as! NSTableCellView
-            let val = filteredSource[row].value as? String ?? ""
-            cell.textField?.stringValue = val
+            let val = filteredSource[row].value ?? ""
+            cell.textField?.stringValue = "\(val)"
             return cell
         }
     }
 
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        25
-    }
-}
-
-extension UInt8 {
-    var printableAscii : String {
-        switch self {
-        case 0..<32:    return "^" + (self + 64).printableAscii
-        case 127:       return "^?"
-        case 32..<128:  return String(bytes: [self], encoding:.ascii)!
-        default:        return "M-" + (self & 127).printableAscii
-        }
-    }
-}
-
-extension Collection where Element == UInt8 {
-    var printableAscii : String {
-        return self.map { $0.printableAscii } .joined()
+        35
     }
 }
