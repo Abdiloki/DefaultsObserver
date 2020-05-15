@@ -11,9 +11,6 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-//        UserDefaults.standard.set("FOUND", forKey: "kaunteya")
 
-        let def = UserDefaults(suiteName: "com.kaunteya.lexi")
-        print(def?.dictionaryRepresentation())
     }
 }
