@@ -709,10 +709,24 @@
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="bnI-a5-M0b"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Vf7-1A-agm"/>
+                                <toolbarItem implicitItemIdentifier="8AC453BB-C174-4BE4-889E-6043C00DE4DC" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="UGb-mQ-cdx">
+                                    <nil key="toolTip"/>
+                                    <textField key="view" verticalHuggingPriority="750" id="8kI-a2-Qtd">
+                                        <rect key="frame" x="0.0" y="14" width="96" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" bezelStyle="round" id="fll-0Z-Rea">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="nD5-ps-sSF"/>
                                 <toolbarItem reference="Vf7-1A-agm"/>
+                                <toolbarItem reference="UGb-mQ-cdx"/>
+                                <toolbarItem reference="Vf7-1A-agm"/>
+                                <toolbarItem reference="nD5-ps-sSF"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -720,6 +734,7 @@
                         </connections>
                     </window>
                     <connections>
+                        <outlet property="middleText" destination="8kI-a2-Qtd" id="1K0-XJ-lTd"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
