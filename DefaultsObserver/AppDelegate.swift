@@ -10,17 +10,10 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+//        UserDefaults.standard.set("FOUND", forKey: "kaunteya")
+
+        let def = UserDefaults(suiteName: "com.kaunteya.lexi")
+        print(def?.dictionaryRepresentation())
     }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
-
-
 }
-

@@ -12,6 +12,7 @@
 		BE983079246EB75900602AE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE983078246EB75900602AE2 /* Assets.xcassets */; };
 		BE98307C246EB75900602AE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE98307A246EB75900602AE2 /* Main.storyboard */; };
 		BE983088246EB75900602AE2 /* DefaultsObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE983087246EB75900602AE2 /* DefaultsObserverTests.swift */; };
+		BE983093246EC06600602AE2 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE983092246EC06600602AE2 /* TableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		BE983083246EB75900602AE2 /* DefaultsObserverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DefaultsObserverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE983087246EB75900602AE2 /* DefaultsObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsObserverTests.swift; sourceTree = "<group>"; };
 		BE983089246EB75900602AE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE983092246EC06600602AE2 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +79,10 @@
 			isa = PBXGroup;
 			children = (
 				BE983074246EB75700602AE2 /* AppDelegate.swift */,
-				BE983076246EB75700602AE2 /* ViewController.swift */,
-				BE983078246EB75900602AE2 /* Assets.xcassets */,
 				BE98307A246EB75900602AE2 /* Main.storyboard */,
+				BE983076246EB75700602AE2 /* ViewController.swift */,
+				BE983092246EC06600602AE2 /* TableCell.swift */,
+				BE983078246EB75900602AE2 /* Assets.xcassets */,
 				BE98307D246EB75900602AE2 /* Info.plist */,
 				BE98307E246EB75900602AE2 /* DefaultsObserver.entitlements */,
 			);
@@ -195,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE983093246EC06600602AE2 /* TableCell.swift in Sources */,
 				BE983077246EB75700602AE2 /* ViewController.swift in Sources */,
 				BE983075246EB75700602AE2 /* AppDelegate.swift in Sources */,
 			);
