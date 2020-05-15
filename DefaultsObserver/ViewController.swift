@@ -2,25 +2,24 @@ import Cocoa
 import Combine
 
 typealias KEYVAL = (key: String, value: Any)
-enum FilterType: Int { case containing, matchingWord, startsWith }
-
-struct Search: Equatable {
-    let type: FilterType
-    let search: String
-}
 
 class ViewController: NSViewController {
     var storage = Set<AnyCancellable>()
     @IBOutlet var pinnedTableView: NSTableView!
     @IBOutlet var tableView: NSTableView!
 
-    var source = [KEYVAL]() {
-        didSet { filteredSource = source }
-    }
-
     var filteredSource = [KEYVAL]() {
         didSet {
+            //Maintains the selection across the reloadData
+            let selectedKeys = tableView.selectedRowIndexes.map { filteredSource[$0].key }
             tableView.reloadData()
+            var newIndexSet = IndexSet()
+            for (i, f) in filteredSource.enumerated() {
+                if selectedKeys.contains(f.key) {
+                    newIndexSet.insert(i)
+                }
+            }
+            tableView.selectRowIndexes(newIndexSet, byExtendingSelection: true)
         }
     }
 
@@ -30,22 +29,27 @@ class ViewController: NSViewController {
         }
     }
 
+    @Published var source = [KEYVAL]()
     @Published var searchString: String = ""
-    @Published var type: FilterType = .containing
-
 
     var bundleId: String = "" {
         didSet {
             print("Bundleid \(bundleId)")
-            guard bundleId.isEmpty == false else { return }
-            let grr = NSHomeDirectory().appending("/Library/Containers/\(bundleId)/Data/Library/Preferences/\(bundleId).plist")
-            let url1 = URL(fileURLWithPath: grr)
-            let dict = NSDictionary(contentsOf: url1) as! [String : Any]
-
-            source = dict.reduce([KEYVAL]()) { (res, t) -> [KEYVAL] in
-                res + [(key: t.key, value: t.value)]
-            }
+            updateInfoFromFile()
         }
+    }
+
+    func updateInfoFromFile() {
+        guard bundleId.isEmpty == false else { return }
+        let grr = NSHomeDirectory().appending("/Library/Containers/\(bundleId)/Data/Library/Preferences/\(bundleId).plist")
+        let url = URL(fileURLWithPath: grr)
+        guard let dict = NSDictionary(contentsOf: url) as? [String : Any] else { return }
+
+        source = dict.reduce([KEYVAL]()) { (res, t) -> [KEYVAL] in
+            res + [(key: t.key, value: t.value)]
+        }.sorted(by: { (a, b) -> Bool in
+            a.key < b.key
+        })
     }
 
     @IBAction func clearPinnedItems(_ sender: Any) {
@@ -54,27 +58,26 @@ class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Publishers.CombineLatest($searchString, $type)
-            .sink { [weak self] (s, t) in
-                guard let self = self else { return }
-                if s.isEmpty { self.filteredSource = self.source; return }
-                self.filteredSource = self.source.filter { (k,v) in
-                    switch t {
-                    case .containing: return k.lowercased().contains(s.lowercased())
-                    case .matchingWord: return k.lowercased() == s.lowercased()
-                    case .startsWith: return k.lowercased().hasPrefix(s.lowercased())
+
+        Publishers.CombineLatest($source, $searchString)
+            .sink { [unowned self] (source, searchString) in
+                if searchString.isEmpty {
+                    self.filteredSource = source
+                } else {
+                    self.filteredSource = source.filter { (k,v) in
+                        k.lowercased().contains(searchString.lowercased())
                     }
                 }
         }.store(in: &self.storage)
 
+        Timer.publish(every: 0.5, on: .main, in: .default)
+            .autoconnect()
+            .sink { _ in self.updateInfoFromFile() }
+            .store(in: &self.storage)
     }
 
     @IBAction func searchAction(_ sender: NSSearchField) {
         searchString  = sender.stringValue
-    }
-
-    @IBAction func filterType(_ sender: NSPopUpButton) {
-        type = FilterType(rawValue: sender.indexOfSelectedItem)!
     }
 
     @IBAction func pinItems(_ sender: Any) {

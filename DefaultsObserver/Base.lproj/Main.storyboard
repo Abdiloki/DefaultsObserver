@@ -971,27 +971,10 @@ DQ
                                         <rect key="frame" x="0.0" y="0.0" width="507" height="176"/>
                                         <subviews>
                                             <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6uU-kI-GEj">
-                                                <rect key="frame" x="0.0" y="154" width="507" height="22"/>
+                                                <rect key="frame" x="0.0" y="154" width="421" height="22"/>
                                                 <subviews>
-                                                    <popUpButton horizontalHuggingPriority="254" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="chD-Nf-0g8">
-                                                        <rect key="frame" x="-2" y="-2" width="130" height="25"/>
-                                                        <popUpButtonCell key="cell" type="push" title="Starts With" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="m4G-5g-cXS" id="5t3-un-c5U">
-                                                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="system"/>
-                                                            <menu key="menu" id="1rq-iI-YIw">
-                                                                <items>
-                                                                    <menuItem title="Containing" id="oQD-s0-qVw"/>
-                                                                    <menuItem title="Matching Word" id="lVW-u2-HCR"/>
-                                                                    <menuItem title="Starts With" state="on" id="m4G-5g-cXS"/>
-                                                                </items>
-                                                            </menu>
-                                                        </popUpButtonCell>
-                                                        <connections>
-                                                            <action selector="filterType:" target="XfG-lQ-9wD" id="gHv-AO-GZj"/>
-                                                        </connections>
-                                                    </popUpButton>
                                                     <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmP-Us-GAk">
-                                                        <rect key="frame" x="133" y="0.0" width="366" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="22"/>
                                                         <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="cd1-pk-9b9">
                                                             <font key="font" metaFont="system"/>
                                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -1002,7 +985,7 @@ DQ
                                                         </connections>
                                                     </searchField>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ksn-xu-j2F">
-                                                        <rect key="frame" x="501" y="-6" width="12" height="32"/>
+                                                        <rect key="frame" x="368" y="-6" width="59" height="32"/>
                                                         <buttonCell key="cell" type="push" title="Pin" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xsU-e7-lef">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
@@ -1017,10 +1000,8 @@ DQ
                                                 <visibilityPriorities>
                                                     <integer value="1000"/>
                                                     <integer value="1000"/>
-                                                    <integer value="1000"/>
                                                 </visibilityPriorities>
                                                 <customSpacing>
-                                                    <real value="3.4028234663852886e+38"/>
                                                     <real value="3.4028234663852886e+38"/>
                                                     <real value="3.4028234663852886e+38"/>
                                                 </customSpacing>
