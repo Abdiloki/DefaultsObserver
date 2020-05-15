@@ -954,7 +954,7 @@ DQ
                                         <rect key="frame" x="0.0" y="220" width="507" height="22"/>
                                         <subviews>
                                             <popUpButton horizontalHuggingPriority="254" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="chD-Nf-0g8">
-                                                <rect key="frame" x="-2" y="-2" width="122" height="25"/>
+                                                <rect key="frame" x="-2" y="-2" width="67" height="25"/>
                                                 <popUpButtonCell key="cell" type="push" title="Starts With" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="m4G-5g-cXS" id="5t3-un-c5U">
                                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -971,7 +971,7 @@ DQ
                                                 </connections>
                                             </popUpButton>
                                             <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmP-Us-GAk">
-                                                <rect key="frame" x="125" y="0.0" width="382" height="22"/>
+                                                <rect key="frame" x="70" y="0.0" width="382" height="22"/>
                                                 <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="cd1-pk-9b9">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -981,12 +981,23 @@ DQ
                                                     <action selector="searchAction:" target="XfG-lQ-9wD" id="VWI-dX-LL8"/>
                                                 </connections>
                                             </searchField>
+                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ksn-xu-j2F">
+                                                <rect key="frame" x="454" y="-6" width="59" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Pin" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xsU-e7-lef">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" metaFont="system"/>
+                                                    <string key="keyEquivalent">p</string>
+                                                    <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                                                </buttonCell>
+                                            </button>
                                         </subviews>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
+                                            <integer value="1000"/>
                                         </visibilityPriorities>
                                         <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
@@ -997,7 +1008,7 @@ DQ
                                             <rect key="frame" x="1" y="0.0" width="505" height="199"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveName="maintable" rowSizeStyle="automatic" headerView="0FZ-Ka-zOw" viewBased="YES" id="Pdx-xx-X54">
+                                                <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" typeSelect="NO" autosaveName="maintable" rowSizeStyle="automatic" headerView="0FZ-Ka-zOw" viewBased="YES" id="Pdx-xx-X54">
                                                     <rect key="frame" x="0.0" y="0.0" width="505" height="174"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -1020,8 +1031,8 @@ DQ
                                                                     <rect key="frame" x="1" y="1" width="118" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="7GT-qK-yHH">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="118" height="17"/>
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7GT-qK-yHH">
+                                                                            <rect key="frame" x="5" y="0.0" width="118" height="17"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="17" id="6Oc-71-oTY"/>
                                                                             </constraints>
@@ -1086,7 +1097,6 @@ DQ
                                                     <connections>
                                                         <outlet property="dataSource" destination="XfG-lQ-9wD" id="CvS-JV-Ty0"/>
                                                         <outlet property="delegate" destination="XfG-lQ-9wD" id="fsV-mY-tqF"/>
-                                                        <segue destination="XfG-lQ-9wD" kind="modal" id="zgD-7t-k8Z"/>
                                                     </connections>
                                                 </tableView>
                                             </subviews>

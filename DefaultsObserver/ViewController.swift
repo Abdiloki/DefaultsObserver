@@ -80,13 +80,13 @@ extension ViewController: NSTableViewDataSource, NSTableViewDelegate {
             return cell
         } else {
             let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "cell1"), owner: nil) as! NSTableCellView
-            let val = filteredSource[row].value ?? ""
+            let val = filteredSource[row].value
             cell.textField?.stringValue = "\(val)"
             return cell
         }
     }
 
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        35
+        30
     }
 }
