@@ -8,6 +8,7 @@ class BundleIDVC: NSViewController {
         vc.bundle = BundleID(bundleTextField.stringValue)
         self.view.window?.close()
     }
+    
     override func viewDidAppear() {
         super.viewDidAppear()
         self.view.window?.center()

@@ -2,11 +2,11 @@ import Cocoa
 
 struct BundleID {
     let id: String
-    var list: [KEYVAL]
+    private (set) var list: [KEYVAL] = []
+    private (set) var dict: [String: Any] = [:]
 
     init(_ id: String) {
         self.id = id
-        list = []
     }
 
     mutating func reload() {
@@ -17,7 +17,7 @@ struct BundleID {
 
         let path = NSHomeDirectory().appending("/Library/Containers/\(id)/Data/Library/Preferences/\(id).plist")
         let url = URL(fileURLWithPath: path)
-        let dict = NSDictionary(contentsOf: url) as? [String : Any] ?? [:]
+        dict = NSDictionary(contentsOf: url) as? [String : Any] ?? [:]
 
         list = dict.reduce([KEYVAL]()) { (res, t) -> [KEYVAL] in
             res + [(key: t.key, value: t.value)]
