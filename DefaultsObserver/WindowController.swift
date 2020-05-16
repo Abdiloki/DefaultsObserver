@@ -13,9 +13,10 @@ class WindowController: NSWindowController {
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if let newBundleVC = segue.destinationController as? NewBundleViewController {
-            let vc = self.contentViewController as! ViewController
+            let vc = self.contentViewController as! PinnedVC
             newBundleVC.sub
-                .assign(to: \.bundleId, on: vc)
+                .map { BundleID($0)}
+                .assign(to: \.bundle, on: vc)
                 .store(in: &self.storage)
             newBundleVC.sub
                 .assign(to: \.stringValue, on: middleText)

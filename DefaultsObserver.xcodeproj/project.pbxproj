@@ -15,6 +15,8 @@
 		BE983093246EC06600602AE2 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE983092246EC06600602AE2 /* TableCell.swift */; };
 		BE983095246EE52700602AE2 /* NewBundleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE983094246EE52700602AE2 /* NewBundleViewController.swift */; };
 		BE983097246EECC200602AE2 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE983096246EECC200602AE2 /* WindowController.swift */; };
+		BE983099246F148000602AE2 /* BundleID.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE983098246F148000602AE2 /* BundleID.swift */; };
+		BE98309B246FA69900602AE2 /* PinnedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE98309A246FA69900602AE2 /* PinnedVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		BE983092246EC06600602AE2 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		BE983094246EE52700602AE2 /* NewBundleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBundleViewController.swift; sourceTree = "<group>"; };
 		BE983096246EECC200602AE2 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		BE983098246F148000602AE2 /* BundleID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleID.swift; sourceTree = "<group>"; };
+		BE98309A246FA69900602AE2 /* PinnedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +89,9 @@
 				BE983074246EB75700602AE2 /* AppDelegate.swift */,
 				BE98307A246EB75900602AE2 /* Main.storyboard */,
 				BE983096246EECC200602AE2 /* WindowController.swift */,
+				BE98309A246FA69900602AE2 /* PinnedVC.swift */,
 				BE983076246EB75700602AE2 /* ViewController.swift */,
+				BE983098246F148000602AE2 /* BundleID.swift */,
 				BE983094246EE52700602AE2 /* NewBundleViewController.swift */,
 				BE983092246EC06600602AE2 /* TableCell.swift */,
 				BE983078246EB75900602AE2 /* Assets.xcassets */,
@@ -204,7 +210,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE98309B246FA69900602AE2 /* PinnedVC.swift in Sources */,
 				BE983093246EC06600602AE2 /* TableCell.swift in Sources */,
+				BE983099246F148000602AE2 /* BundleID.swift in Sources */,
 				BE983097246EECC200602AE2 /* WindowController.swift in Sources */,
 				BE983077246EB75700602AE2 /* ViewController.swift in Sources */,
 				BE983075246EB75700602AE2 /* AppDelegate.swift in Sources */,
