@@ -22,6 +22,12 @@ class ViewController: NSViewController {
             filteredSource[$0].key
         }
         selectedKeysSubject.send(selectedKeys)
+        tableView.selectRowIndexes(IndexSet(), byExtendingSelection: false)
+    }
+
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        reload(true)
     }
 
     @IBAction func reload(_ sender: Any) {

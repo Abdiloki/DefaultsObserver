@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="n8J-uT-S93">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -681,60 +681,105 @@
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
         <!--Window Controller-->
-        <scene sceneID="R2V-B0-nI4">
+        <scene sceneID="5mM-Xt-g33">
             <objects>
-                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="WindowController" customModule="DefaultsObserver" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="window" animationBehavior="default" titleVisibility="hidden" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                <windowController id="n8J-uT-S93" sceneMemberID="viewController">
+                    <window key="window" title="Add bundle id" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" visibleAtLaunch="NO" frameAutosaveName="addbundle" animationBehavior="default" titlebarAppearsTransparent="YES" id="ppK-Af-nZU">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="234"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="551E24B0-F70A-4483-A54C-492A2EFA8097" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="LeB-BP-4b9">
-                            <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="C5151366-7E4C-43DF-A897-6727E91AC1E1" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="nD5-ps-sSF">
-                                    <nil key="toolTip"/>
-                                    <button key="view" verticalHuggingPriority="750" id="gQl-IE-39W">
-                                        <rect key="frame" x="0.0" y="14" width="127" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="roundTextured" title="Bundle ID" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MHa-vO-apS">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                            <string key="keyEquivalent">n</string>
-                                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <segue destination="OnV-pW-awe" kind="sheet" identifier="new" id="wa9-5P-9j8"/>
-                                        </connections>
-                                    </button>
-                                </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="bnI-a5-M0b"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Vf7-1A-agm"/>
-                                <toolbarItem implicitItemIdentifier="8AC453BB-C174-4BE4-889E-6043C00DE4DC" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="UGb-mQ-cdx">
-                                    <nil key="toolTip"/>
-                                    <textField key="view" verticalHuggingPriority="750" id="8kI-a2-Qtd">
-                                        <rect key="frame" x="0.0" y="14" width="96" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" lineBreakMode="truncatingMiddle" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" bezelStyle="round" id="fll-0Z-Rea">
+                        <rect key="contentRect" x="163" y="199" width="342" height="124"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+                        <connections>
+                            <outlet property="delegate" destination="n8J-uT-S93" id="EJG-es-yVg"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="l7X-GK-FfB" kind="relationship" relationship="window.shadowedContentViewController" id="W66-wi-25y"/>
+                    </connections>
+                </windowController>
+                <customObject id="5gV-tJ-nI3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-596" y="304"/>
+        </scene>
+        <!--BundleIDVC-->
+        <scene sceneID="iDT-Ix-jg0">
+            <objects>
+                <viewController id="l7X-GK-FfB" customClass="BundleIDVC" customModule="DefaultsObserver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="82A-c5-32P">
+                        <rect key="frame" x="0.0" y="0.0" width="327" height="90"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <stackView distribution="fillEqually" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pa0-Yi-3Ky">
+                                <rect key="frame" x="20" y="20" width="287" height="50"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MFn-U2-clg">
+                                        <rect key="frame" x="0.0" y="29" width="287" height="21"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" title="com.kaunteya.lexidebug" placeholderString="com.organization.appname" drawsBackground="YES" id="nzK-pO-JSs">
                                             <font key="font" usesAppearanceFont="YES"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                </toolbarItem>
-                            </allowedToolbarItems>
-                            <defaultToolbarItems>
-                                <toolbarItem reference="Vf7-1A-agm"/>
-                                <toolbarItem reference="UGb-mQ-cdx"/>
-                                <toolbarItem reference="Vf7-1A-agm"/>
-                                <toolbarItem reference="nD5-ps-sSF"/>
-                            </defaultToolbarItems>
-                        </toolbar>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OJV-Rl-jy9">
+                                        <rect key="frame" x="-6" y="-7" width="299" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Submit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="W9J-Mn-emM">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="dismissController:" target="l7X-GK-FfB" id="mwT-vt-kGX"/>
+                                            <segue destination="B8D-0N-5wS" kind="show" id="a9V-9o-Bsj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="MFn-U2-clg" firstAttribute="leading" secondItem="pa0-Yi-3Ky" secondAttribute="leading" id="0mH-HB-vBX"/>
+                                    <constraint firstItem="OJV-Rl-jy9" firstAttribute="leading" secondItem="pa0-Yi-3Ky" secondAttribute="leading" id="ROV-nF-oNw"/>
+                                    <constraint firstAttribute="trailing" secondItem="OJV-Rl-jy9" secondAttribute="trailing" id="sqX-3f-DCA"/>
+                                    <constraint firstAttribute="trailing" secondItem="MFn-U2-clg" secondAttribute="trailing" id="xfl-TS-A7Z"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="pa0-Yi-3Ky" secondAttribute="bottom" constant="20" id="C0g-cN-zou"/>
+                            <constraint firstItem="pa0-Yi-3Ky" firstAttribute="top" secondItem="82A-c5-32P" secondAttribute="top" constant="20" id="GGe-5Q-Zfi"/>
+                            <constraint firstItem="pa0-Yi-3Ky" firstAttribute="leading" secondItem="82A-c5-32P" secondAttribute="leading" constant="20" id="RaS-tg-Isk"/>
+                            <constraint firstAttribute="trailing" secondItem="pa0-Yi-3Ky" secondAttribute="trailing" constant="20" id="Unp-ur-WtN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bundleTextField" destination="MFn-U2-clg" id="p8W-Or-s7n"/>
+                    </connections>
+                </viewController>
+                <customObject id="ng8-KW-ypY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-585" y="582"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="R2V-B0-nI4">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="window" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="480" height="234"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
                     <connections>
-                        <outlet property="middleText" destination="8kI-a2-Qtd" id="1K0-XJ-lTd"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
@@ -817,17 +862,17 @@ DQ
                         <rect key="frame" x="0.0" y="0.0" width="513" height="356"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="58" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hsi-Hx-D0e">
-                                <rect key="frame" x="0.0" y="0.0" width="513" height="306"/>
+                            <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hsi-Hx-D0e">
+                                <rect key="frame" x="0.0" y="0.0" width="513" height="231"/>
                                 <subviews>
                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDb-oN-Y5p">
-                                        <rect key="frame" x="0.0" y="79" width="513" height="227"/>
+                                        <rect key="frame" x="0.0" y="29" width="513" height="202"/>
                                         <clipView key="contentView" id="XLz-X5-KkY">
-                                            <rect key="frame" x="1" y="0.0" width="511" height="226"/>
+                                            <rect key="frame" x="1" y="0.0" width="511" height="201"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" typeSelect="NO" rowSizeStyle="automatic" headerView="lp6-Wg-Nuw" viewBased="YES" id="aDB-QB-9Z4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="511" height="201"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="511" height="176"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>

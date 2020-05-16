@@ -5,7 +5,11 @@ class PinnedVC: NSViewController {
     var storage = Set<AnyCancellable>()
 
     @IBOutlet var tableView: NSTableView!
-    var bundle: BundleID?
+    var bundle: BundleID? {
+        didSet {
+            self.view.window!.title = bundle!.id// ?? ""
+        }
+    }
 
     var keys = [String]() {
         didSet {

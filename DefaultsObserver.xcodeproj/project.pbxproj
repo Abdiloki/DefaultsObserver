@@ -14,9 +14,9 @@
 		BE983088246EB75900602AE2 /* DefaultsObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE983087246EB75900602AE2 /* DefaultsObserverTests.swift */; };
 		BE983093246EC06600602AE2 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE983092246EC06600602AE2 /* TableCell.swift */; };
 		BE983095246EE52700602AE2 /* NewBundleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE983094246EE52700602AE2 /* NewBundleViewController.swift */; };
-		BE983097246EECC200602AE2 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE983096246EECC200602AE2 /* WindowController.swift */; };
 		BE983099246F148000602AE2 /* BundleID.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE983098246F148000602AE2 /* BundleID.swift */; };
 		BE98309B246FA69900602AE2 /* PinnedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE98309A246FA69900602AE2 /* PinnedVC.swift */; };
+		BE98309D246FB20D00602AE2 /* BundleIDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE98309C246FB20D00602AE2 /* BundleIDVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +42,9 @@
 		BE983089246EB75900602AE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE983092246EC06600602AE2 /* TableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
 		BE983094246EE52700602AE2 /* NewBundleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBundleViewController.swift; sourceTree = "<group>"; };
-		BE983096246EECC200602AE2 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		BE983098246F148000602AE2 /* BundleID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleID.swift; sourceTree = "<group>"; };
 		BE98309A246FA69900602AE2 /* PinnedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedVC.swift; sourceTree = "<group>"; };
+		BE98309C246FB20D00602AE2 /* BundleIDVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleIDVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 			children = (
 				BE983074246EB75700602AE2 /* AppDelegate.swift */,
 				BE98307A246EB75900602AE2 /* Main.storyboard */,
-				BE983096246EECC200602AE2 /* WindowController.swift */,
+				BE98309C246FB20D00602AE2 /* BundleIDVC.swift */,
 				BE98309A246FA69900602AE2 /* PinnedVC.swift */,
 				BE983076246EB75700602AE2 /* ViewController.swift */,
 				BE983098246F148000602AE2 /* BundleID.swift */,
@@ -213,7 +213,7 @@
 				BE98309B246FA69900602AE2 /* PinnedVC.swift in Sources */,
 				BE983093246EC06600602AE2 /* TableCell.swift in Sources */,
 				BE983099246F148000602AE2 /* BundleID.swift in Sources */,
-				BE983097246EECC200602AE2 /* WindowController.swift in Sources */,
+				BE98309D246FB20D00602AE2 /* BundleIDVC.swift in Sources */,
 				BE983077246EB75700602AE2 /* ViewController.swift in Sources */,
 				BE983075246EB75700602AE2 /* AppDelegate.swift in Sources */,
 				BE983095246EE52700602AE2 /* NewBundleViewController.swift in Sources */,
