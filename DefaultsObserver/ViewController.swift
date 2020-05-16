@@ -6,7 +6,11 @@ typealias KEYVAL = (key: String, value: Any)
 class ViewController: NSViewController {
     var storage = Set<AnyCancellable>()
     var bundle: BundleID!
-    var searchString: String = ""
+    var searchString: String = "" {
+        didSet {
+            reload(true)
+        }
+    }
     var selectedKeysSubject = PassthroughSubject<[String], Never>()
 
     @IBOutlet var tableView: NSTableView!
