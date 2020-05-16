@@ -706,20 +706,24 @@
             <objects>
                 <viewController id="l7X-GK-FfB" customClass="BundleIDVC" customModule="DefaultsObserver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="82A-c5-32P">
-                        <rect key="frame" x="0.0" y="0.0" width="327" height="90"/>
+                        <rect key="frame" x="0.0" y="0.0" width="327" height="88"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fillEqually" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pa0-Yi-3Ky">
-                                <rect key="frame" x="20" y="20" width="287" height="50"/>
+                                <rect key="frame" x="20" y="20" width="287" height="48"/>
                                 <subviews>
-                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MFn-U2-clg">
-                                        <rect key="frame" x="0.0" y="29" width="287" height="21"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" title="com.kaunteya.lexidebug" placeholderString="com.organization.appname" drawsBackground="YES" id="nzK-pO-JSs">
-                                            <font key="font" usesAppearanceFont="YES"/>
+                                    <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6rh-At-Fbr">
+                                        <rect key="frame" x="0.0" y="25" width="290" height="25"/>
+                                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesDataSource="YES" numberOfVisibleItems="5" id="SeS-My-Rnw">
+                                            <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
+                                        </comboBoxCell>
+                                        <connections>
+                                            <outlet property="dataSource" destination="l7X-GK-FfB" id="net-QW-sS0"/>
+                                            <outlet property="delegate" destination="l7X-GK-FfB" id="3RW-5e-KYr"/>
+                                        </connections>
+                                    </comboBox>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OJV-Rl-jy9">
                                         <rect key="frame" x="-6" y="-7" width="299" height="32"/>
                                         <buttonCell key="cell" type="push" title="Submit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="W9J-Mn-emM">
@@ -728,6 +732,7 @@
                                             <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
+                                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="dismissController:" target="l7X-GK-FfB" id="mwT-vt-kGX"/>
@@ -736,10 +741,10 @@ DQ
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="MFn-U2-clg" firstAttribute="leading" secondItem="pa0-Yi-3Ky" secondAttribute="leading" id="0mH-HB-vBX"/>
+                                    <constraint firstAttribute="trailing" secondItem="6rh-At-Fbr" secondAttribute="trailing" id="PGa-Ba-9jj"/>
                                     <constraint firstItem="OJV-Rl-jy9" firstAttribute="leading" secondItem="pa0-Yi-3Ky" secondAttribute="leading" id="ROV-nF-oNw"/>
+                                    <constraint firstItem="6rh-At-Fbr" firstAttribute="leading" secondItem="pa0-Yi-3Ky" secondAttribute="leading" id="dY0-LT-dt0"/>
                                     <constraint firstAttribute="trailing" secondItem="OJV-Rl-jy9" secondAttribute="trailing" id="sqX-3f-DCA"/>
-                                    <constraint firstAttribute="trailing" secondItem="MFn-U2-clg" secondAttribute="trailing" id="xfl-TS-A7Z"/>
                                 </constraints>
                                 <visibilityPriorities>
                                     <integer value="1000"/>
@@ -759,7 +764,7 @@ DQ
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bundleTextField" destination="MFn-U2-clg" id="p8W-Or-s7n"/>
+                        <outlet property="comboBox" destination="6rh-At-Fbr" id="oCz-zJ-i18"/>
                     </connections>
                 </viewController>
                 <customObject id="ng8-KW-ypY" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
