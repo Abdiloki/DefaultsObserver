@@ -14,7 +14,7 @@ class ViewController: NSViewController {
     var filteredSource = [KEYVAL]()
 
     @IBAction func searchAction(_ sender: NSSearchField) {
-        searchString  = sender.stringValue
+        searchString  = sender.stringValue.lowercased()
     }
 
     @IBAction func pinItems(_ sender: Any) {
@@ -33,7 +33,13 @@ class ViewController: NSViewController {
     @IBAction func reload(_ sender: Any) {
         bundle.reload()
         source = bundle.list
-        filteredSource = source
+        if searchString.isEmpty {
+            filteredSource = source
+        } else {
+            filteredSource = source.filter {
+                $0.key.lowercased().contains(searchString)
+            }
+        }
         tableView.reloadData()
     }
 }

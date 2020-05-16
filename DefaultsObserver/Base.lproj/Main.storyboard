@@ -1096,10 +1096,10 @@ DQ
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    <connections>
+                                                        <action selector="searchAction:" target="a19-76-hZ3" id="mwB-3r-fqd"/>
+                                                    </connections>
                                                 </searchFieldCell>
-                                                <connections>
-                                                    <action selector="searchAction:" target="a19-76-hZ3" id="5WO-GA-j5t"/>
-                                                </connections>
                                             </searchField>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="urI-D3-Ub6">
                                                 <rect key="frame" x="431" y="-6" width="82" height="32"/>
